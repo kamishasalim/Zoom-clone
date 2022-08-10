@@ -97,7 +97,14 @@ video {
   background-color: #242f41;
 }
 
-.main__chat_window {
+.main__user {
+  display: flex;
+  flex-direction: column;
+  flex: 0.3;
+  background-color: #242f41;
+}
+
+.main__user_window {
   flex-grow: 1;
   overflow-y: scroll;
 }
@@ -146,6 +153,13 @@ video {
 }
 
 .message > span {
+  background-color: #eeeeee;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.users > span {
   background-color: #eeeeee;
   margin: 1rem 0;
   padding: 1rem;

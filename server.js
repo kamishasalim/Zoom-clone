@@ -29,14 +29,16 @@ app.get("/:room", (req, res) => {
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, userName) => {
-    console.log(userId);
+    // console.log(userId);
     socket.join(roomId);
     let userObj = { userId, roomId, userName };
     userList.push(userObj)
     socket.to(roomId).emit("user-connected", userId);
+    io.to(roomId).emit("userlist", userList);
     socket.on("message", (message) => {
 
       io.to(roomId).emit("createMessage", message, userName);
+      
     });
   });
 });

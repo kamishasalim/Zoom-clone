@@ -139,15 +139,32 @@ inviteButton.addEventListener("click", (e) => {
   );
 });
 
-socket.on("createMessage", (message, userName) => {
-  messages.innerHTML =
-    messages.innerHTML +
+socket.on("userlist", (userList) => {
+  users.innerHTML =``;
+  userList.forEach(element => {
+    if(user!=element.userName){
+  users.innerHTML =
+    users.innerHTML +
+    `<div class="message">
+        <b><i class="far fa-user-circle"></i> <span></span> </b>
+        <span>${element.userName}</span>
+    </div>`;
+    }
+  });
+});
+socket.on("createMessage", (userList) => {
+  messages.innerHTML = '';
+  arr.forEach(element => {
+  
+  messages.innerHTML =    messages.innerHTML +
     `<div class="message">
         <b><i class="far fa-user-circle"></i> <span> ${
           userName === user ? "me" : userName
         }</span> </b>
         <span>${message}</span>
     </div>`;
+    
+  });
 });
 
 socket.on("join-room", (roomId, userId, userName) => {
