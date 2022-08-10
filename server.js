@@ -34,7 +34,7 @@ io.on("connection", (socket) => {
     let userObj = { userId, roomId, userName };
     userList.push(userObj)
     socket.to(roomId).emit("user-connected", userId);
-
+    console.log(userList);
     io.to(roomId).emit("userlist", roomId, userList);
     socket.on("message", (message) => {
 
