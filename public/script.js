@@ -139,9 +139,10 @@ inviteButton.addEventListener("click", (e) => {
   );
 });
 
-socket.on("userlist", (userList) => {
+socket.on("userlist", (roomId,userList) => {
+  console.log(roomId ,userList);
   users.innerHTML =``;
-  userList.forEach(element => {
+  userList.filter(user=>user.roomId==roomId).forEach(element => {
     if(user!=element.userName){
   users.innerHTML =
     users.innerHTML +
@@ -152,9 +153,8 @@ socket.on("userlist", (userList) => {
     }
   });
 });
-socket.on("createMessage", (userList) => {
-  messages.innerHTML = '';
-  arr.forEach(element => {
+socket.on("createMessage", (message, userName) => {
+ 
   
   messages.innerHTML =    messages.innerHTML +
     `<div class="message">
@@ -164,7 +164,7 @@ socket.on("createMessage", (userList) => {
         <span>${message}</span>
     </div>`;
     
-  });
+ 
 });
 
 socket.on("join-room", (roomId, userId, userName) => {
