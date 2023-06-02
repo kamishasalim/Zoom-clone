@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --main-darklg: #1d2635;
-  --main-dark: #161d29;
-  --primary-color: #2f80ec;
+  --main-darklg: #4c4d4f;
+  --main-dark: #6c6e72;
+  --primary-color: #b4bcbc;
   --main-light: #eeeeee;
   font-family: "Poppins", sans-serif;
 }
@@ -94,7 +94,7 @@ video {
   display: flex;
   flex-direction: column;
   flex: 0.3;
-  background-color: #242f41;
+  background-color: #4c4d4f;
 }
 
 .main__user {
@@ -141,7 +141,7 @@ video {
 }
 
 .message > b {
-  color: #eeeeee;
+  color: #090909;
   display: flex;
   align-items: center;
   text-transform: capitalize;
@@ -182,7 +182,7 @@ video {
   font-size: 1.3rem;
   top: 17px;
   left: 28px;
-  color: #fff;
+  color: #802020;
 }
 
 @media (max-width: 700px) {
